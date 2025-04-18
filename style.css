@@ -1,3 +1,11 @@
+/* General Layout Fix */
+.container {
+  width: 100%;
+  max-width: 1200px; /* Adjust max width for desktop */
+  margin: 0 auto; /* Center the content */
+  padding: 0 20px;
+}
+
 /* Gallery Slideshow Section */
 .gallery-section {
   padding: 80px 20px;
@@ -17,7 +25,8 @@
   object-fit: cover;
   border-radius: 16px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
-  width: 100%; /* Ensuring responsiveness on large screens */
+  width: 100%; /* Ensure images scale to container */
+  height: auto;
 }
 
 /* Catering Card Slideshow */
@@ -32,7 +41,9 @@
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   text-align: center;
   transition: transform 0.3s ease-in-out;
-  width: 100%; /* Making it flexible */
+  width: 100%; /* Make sure card scales properly */
+  max-width: 350px; /* Ensure it doesn't get too wide */
+  margin: 0 auto; /* Center it */
 }
 
 .catering-card:hover {
@@ -55,10 +66,9 @@
 .menu-cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   gap: 25px;
   margin-top: 50px;
-  justify-content: space-evenly; /* Ensures even space between cards */
 }
 
 .menu-card {
@@ -68,7 +78,6 @@
   padding: 25px;
   box-shadow: 0 5px 14px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
-  flex-grow: 1; /* Ensures cards are evenly distributed */
 }
 
 .menu-card:hover {
@@ -114,26 +123,18 @@
   }
 }
 
-/* Desktop Enhancements */
+/* Desktop View Fix */
 @media (min-width: 1024px) {
-  .gallery-section {
-    padding: 100px 50px;
-  }
-
-  .gallery-carousel img {
-    max-height: 500px; /* Slightly bigger for desktop */
-  }
-
-  .catering-card {
-    width: 45%; /* Adjust card size on larger screens */
+  .gallery-section,
+  .catering-card,
+  .menu-card {
+    width: 100%; /* Ensure these elements do not overflow */
+    max-width: 400px; /* Adjust max-width for cards on larger screens */
   }
 
   .menu-cards {
-    flex-wrap: wrap;
+    display: flex;
     justify-content: space-between;
-  }
-
-  .menu-card {
-    width: 23%; /* More cards per row on larger screens */
+    gap: 30px;
   }
 }
