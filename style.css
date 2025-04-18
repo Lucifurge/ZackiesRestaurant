@@ -17,6 +17,7 @@
   object-fit: cover;
   border-radius: 16px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  width: 100%; /* Ensuring responsiveness on large screens */
 }
 
 /* Catering Card Slideshow */
@@ -31,6 +32,7 @@
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   text-align: center;
   transition: transform 0.3s ease-in-out;
+  width: 100%; /* Making it flexible */
 }
 
 .catering-card:hover {
@@ -56,6 +58,7 @@
   justify-content: center;
   gap: 25px;
   margin-top: 50px;
+  justify-content: space-evenly; /* Ensures even space between cards */
 }
 
 .menu-card {
@@ -65,6 +68,7 @@
   padding: 25px;
   box-shadow: 0 5px 14px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
+  flex-grow: 1; /* Ensures cards are evenly distributed */
 }
 
 .menu-card:hover {
@@ -107,5 +111,29 @@
 
   .menu-card {
     width: 90%;
+  }
+}
+
+/* Desktop Enhancements */
+@media (min-width: 1024px) {
+  .gallery-section {
+    padding: 100px 50px;
+  }
+
+  .gallery-carousel img {
+    max-height: 500px; /* Slightly bigger for desktop */
+  }
+
+  .catering-card {
+    width: 45%; /* Adjust card size on larger screens */
+  }
+
+  .menu-cards {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .menu-card {
+    width: 23%; /* More cards per row on larger screens */
   }
 }
